@@ -4,10 +4,14 @@ export const COUNTER_CONTEXT = createContext();
 
 const CounterContext = ({ children }) => {
   const [count, setCount] = useState(0);
+  // for counter 2
+  const [count2, setCount2] = useState(0);
 
   const value = {
     count,
     setCount,
+    count2,
+    setCount2,
   };
 
   return (
