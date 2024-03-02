@@ -20,39 +20,65 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
   return (
     <MyModal isOpen={isOpen} setIsOpen={setIsOpen} title={"programming hero"}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        {/*  */}
-        <div className="flex flex-col gap-3">
-          <label htmlFor="title">Title</label>
-          <input type="text" {...register("title")} />
-
-          <div className="flex flex-col mb-5">
-            <label htmlFor="Description">Description</label>
-            <textarea id="description" {...register("description")} />
-          </div>
-
-          <div className="flex flex-col mb-5">
-            <label htmlFor="title">Deadline</label>
-            <input type="date" id="date" {...register("date")} />
-          </div>
-
-          {/* <div className="flex flex-col mb-5">
-            <label htmlFor="title">Deadline</label>
-            <input type="date" id="date" {...register("date")} />
-          </div>
-          <div className="flex flex-col mb-5">
-            <label htmlFor="title">Deadline</label>
-            <input type="date" id="date" {...register("date")} />
-          </div> */}
-
-          {/*  */}
-          <button
-            onClick={() => onCancel()}
-            type="button"
-            className="bg-red-500"
+        <div className="flex flex-col mb-5">
+          <label htmlFor="title" className="mb-2">
+            Title
+          </label>
+          <input
+            type="text"
+            className="w-full rounded-md"
+            id="title"
+            {...register("title")}
+          />
+        </div>
+        <div className="flex flex-col mb-5">
+          <label htmlFor="title" className="mb-2">
+            Date
+          </label>
+          <input
+            type="date"
+            className="w-full rounded-md"
+            id="date"
+            {...register("date")}
+          />
+        </div>
+        <div className="flex flex-col mb-5">
+          <label htmlFor="title" className="mb-2">
+            Assign To
+          </label>
+          <select
+            className="w-full rounded-md"
+            id="assignedTo"
+            {...register("assignedTo")}
           >
-            cancel
+            <option value="Mir Hussain">Mir Hussain</option>
+            <option value="Mezba Abedin">Mezba Abedin</option>
+            <option value="Nahid Hasan">Nahid Hasan</option>
+          </select>
+        </div>
+
+        <div className="flex flex-col mb-5">
+          <label htmlFor="title" className="mb-2">
+            Priority
+          </label>
+          <select
+            className="w-full rounded-md"
+            id="priority"
+            {...register("priority")}
+          >
+            <option defaultValue value="High">
+              High
+            </option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
+
+        <div className="flex flex-col mb-5">
+          <button onClick={onCancel} type="button" className="btn btn-danger">
+            Cancel
           </button>
-          <button type="submit" className="bg-green-500">
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </div>
